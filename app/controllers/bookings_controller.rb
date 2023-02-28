@@ -7,5 +7,8 @@ class BookingsController < ApplicationController
 
   def destroy; end
 
+  def create; end
+
+  def edit; end
 
 end
