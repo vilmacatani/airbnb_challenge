@@ -4,8 +4,6 @@ Review.destroy_all
 Booking.destroy_all
 Offering.destroy_all
 User.destroy_all
-
-
 User.create!(first_name: "Vilma",
   last_name:"Catani",
   email: "vilamcatani@gmail.com",
