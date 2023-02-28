@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.05);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,6 +12,7 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 100px;
+  margin-left: 16px;
 }
 
 .search-form-control {
@@ -35,4 +39,33 @@
   border: 1px solid #1EDD88;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.nav-item-create-booking {
+  margin-right: 30px;
+  border: 1px solid #4A4A4A;
+  padding: 4px 8px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  text-align: center;
+
+}
+
+.nav-item-create-booking:hover {
+  opacity: 1;
+  border-color:#1EDD88;
+  color:#1EDD88;
+}
+
+.nav-item-username {
+  border-left: solid #4a4a4a2b;
+  padding: 7px;
+}
+
+.navbar-nav.me-auto {
+  display: flex;
+  align-items: center
 }
