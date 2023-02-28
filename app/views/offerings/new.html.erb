@@ -1,0 +1,20 @@
+
+
+<div class="container">
+  <h1>Create a new offering</h1>
+
+
+  <div class="new_form">
+    <%= simple_form_for(@offering) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :available %>
+      <%= f.input :description %>
+      <%= f.input :type %>
+      <%= f.input :size %>
+      <%= f.input :address %>
+      <%= f.input :city %>
+      <%= f.input :country, as: :text %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
