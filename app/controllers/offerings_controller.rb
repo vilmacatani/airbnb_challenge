@@ -1,5 +1,5 @@
 class OfferingsController < ApplicationController
-  before_action :set_offering, only: %i[show destroy edit]
+  before_action :set_offering, only: %i[show destroy edit update]
   def index
     @offerings = Offering.all
   end
@@ -25,6 +25,11 @@ class OfferingsController < ApplicationController
   end
 
   def edit; end
+
+  def update
+    @offering.update(offering_params)
+    redirect_to offering_path(@offering)
+  end
 
   def set_offering
     @offering = Offering.find(params[:id])
