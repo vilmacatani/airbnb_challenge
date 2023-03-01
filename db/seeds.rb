@@ -29,9 +29,9 @@ Offering.create!(user_id: User.first.id, title:"Beautiful appartment with a sea 
   description: "Beautiful place with 2 bedrooms,one kitchen, pets allowed with balcony", average_rating: 5, price_per_night: 149.99, address:"Zeeweg 3 2202", city: "Utrecht", country: "Netherlands", size:4)
 
 
-Booking.create!(offering_id: Offering.first.id, user_id: User.first.id, start_date: Date.new(2023, 2, 21), end_date: Date.new(2023, 2, 27), accepted: false)
-Booking.create!(offering_id: Offering.first.id, user_id: User.last.id, start_date: Date.new(2023, 4, 16), end_date: Date.new(2023, 4, 30),accepted: false)
-Booking.create!(offering_id: Offering.first.id, user_id: User.first.id, start_date: Date.new(2023, 6, 10), end_date: Date.new(2023, 6, 25), accepted:false)
+Booking.create!(offering_id: Offering.first.id, user_id: User.first.id, start_date: Date.new(2023, 2, 21), end_date: Date.new(2023, 2, 27), accepted: false, pending: true)
+Booking.create!(offering_id: Offering.first.id, user_id: User.last.id, start_date: Date.new(2023, 4, 16), end_date: Date.new(2023, 4, 30),accepted: false, pending: true)
+Booking.create!(offering_id: Offering.first.id, user_id: User.first.id, start_date: Date.new(2023, 6, 10), end_date: Date.new(2023, 6, 25), accepted:false, pending: true)
 
 
 Review.create!(rating: 3, comment: "Nice place to be!", booking_id: Booking.first.id)
