@@ -1,5 +1,6 @@
 class OfferingsController < ApplicationController
   before_action :set_offering, only: %i[show destroy edit update]
+
   def index
     @offerings = Offering.all
   end
@@ -12,6 +13,7 @@ class OfferingsController < ApplicationController
 
   def create
     @offering = Offering.new(offering_params)
+    @offering.user = current_user
     if @offering.save
       redirect_to offerings_path
     else
@@ -31,12 +33,14 @@ class OfferingsController < ApplicationController
     redirect_to offering_path(@offering)
   end
 
+  private
+
   def set_offering
     @offering = Offering.find(params[:id])
   end
 
   def offering_params
-    params.require(:offering).permit(:title, :available, :description, :type, :price_per_night,
-          :address, :country, :size)
+    params.require(:offering).permit(:title, :available, :description, :price_per_night,
+          :address, :country, :size, :city)
   end
 end

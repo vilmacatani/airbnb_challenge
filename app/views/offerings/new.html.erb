@@ -7,13 +7,13 @@
   <div class="new_form">
     <%= simple_form_for(@offering) do |f| %>
       <%= f.input :title %>
-      <%= f.input :available %>
+      <%= f.input :available, disabled: false %>
       <%= f.input :description %>
-      <%= f.input :type %>
+      <%#= f.input :type %>
       <%= f.input :size %>
-      <%= f.input :address %>
-      <%= f.input :city %>
-      <%= f.input :country, as: :text %>
+      <%= f.input :address, as: :string %>
+      <%= f.input :city, as: :string %>
+      <%= f.input :country, as: :string %>
       <%= f.submit %>
     <% end %>
   </div>

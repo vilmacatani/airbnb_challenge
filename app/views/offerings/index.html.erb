@@ -25,19 +25,23 @@
             <li class="nav-item-username">
               <a class="nav-link" href="#">User Name</a>
             </li>
+            <li>
+              <% if user_signed_in? %>
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
+              <% else %>
+                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              <% end %>
+            </li>
             <li class="nav-item dropdown">
               <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://source.unsplash.com/random/?face" />
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">My profile</a>
                 <a class="dropdown-item" href="#">Messages</a>
-                <a class="dropdown-item" href="#">My history</a>
                 <a class="dropdown-item" href="#">My bookings</a>
                 <a class="dropdown-item" href="#">My reviews</a>
                 <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
               </div>
             </li>
-            <!--li class="nav-item"-->
-            <!--/li-->
         </ul>
       </div>
     </div>
