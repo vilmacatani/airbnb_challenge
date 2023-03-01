@@ -63,7 +63,7 @@
             <div class="reserve-button"><%= link_to "New booking", new_offering_booking_path(@offering) %></div>
           <% end %>
         <% else %>
-          <a class="reserve-button" href="#reservefuntion">Reserve now</a>
+          <%= link_to "New booking", new_user_session_path, class: "reserve-button" %>
         <% end %>
     </div>
   </div>
