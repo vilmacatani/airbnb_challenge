@@ -1,6 +1,6 @@
 
 
-<div class="container">
+<div class="container-form-sub">
   <h1>Create a new offering</h1>
 
 
@@ -9,12 +9,23 @@
       <%= f.input :title %>
       <%= f.input :available %>
       <%= f.input :description %>
-      <%= f.input :type %>
+      <%= f.input :property_type %>
       <%= f.input :size %>
       <%= f.input :address %>
       <%= f.input :city %>
-      <%= f.input :country, as: :text %>
+      <%= f.input :country, as: :string %>
       <%= f.submit %>
     <% end %>
   </div>
+
+
+  <div class="file-upload">
+    <div class="file-select">
+      <div class="file-select-button" id="fileName">Choose File</div>
+      <div class="file-select-name" id="noFile">Please import here your pictures</div>
+      <input type="file" name="chooseFile" id="chooseFile">
+    </div>
+  </div>
+
+
 </div>
