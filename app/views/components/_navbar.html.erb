@@ -40,7 +40,10 @@
               <% end %>
             </li>
             <li class="nav-item dropdown">
-              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://source.unsplash.com/random/?face" />
+              <% if user_signed_in? %>
+                <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://source.unsplash.com/random/?face" />
+              <% end %>
+
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">My profile</a>
                 <a class="dropdown-item" href="#">Messages</a>
