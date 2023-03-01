@@ -20,6 +20,9 @@
     <div class="form-actions">
      <%= f.submit class: "btn btn-primary", value: "Sign Up" %>
       <%#= render "devise/shared/links" %>
+      <li class="list-group-item">
+  <%= link_to "Sign in",new_user_session_path %>
+</li>
     </div>
   <% end %>
 
