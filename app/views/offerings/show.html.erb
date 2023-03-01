@@ -78,7 +78,7 @@
         <p id="property-type">Property type: Villa</p>
         <h2>This is the title of my property</h2>
         <h3>14 guests • 6 bedrooms • 4 bathrooms • sauna</h3>
-        <p id="show-description">This is a description. An ideal magical place to gather, the splendid chalet overlooks the city with a magnificent view of mountains near the ski resort.
+        <p id="show-description"><%= @offering.description %> An ideal magical place to gather, the splendid chalet overlooks the city with a magnificent view of mountains near the ski resort.
           On 3 levels, with an area of 254m², the chalet benefits from 6 bedrooms, 4wc, 3 baths
           This proprity features a games room, sauna and outdoor spa.
           This magical place are ideally designed to accommodate 14 people.
@@ -89,7 +89,7 @@
       <div class= "property-infos">
       <div class="price-rating">
         <div class="price-night">
-          <span class="price">€180</span>
+          <span class="price">€<%=@offering.price_per_night %></span>
           <span class="night"> / night</span>
         </div>
         <div class="rating-night">
