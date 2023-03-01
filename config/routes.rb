@@ -12,3 +12,4 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: %i[index show new create destroy]
 end
+
