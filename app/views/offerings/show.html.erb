@@ -54,13 +54,6 @@
 
         </div>
       </div>
-        <a class="reserve-button" href="#reservefuntion">Reserve now</a>
-      </div>
-
-        <button class="btn btn-light">
-          <%= link_to "Update", edit_offering_path(@offering) %>
-        <%# </button> %>
-      </div>
          <% if user_signed_in? %>
           <% if @offering.user_id == current_user.id %>
               <div class="reserve-button"><%= link_to "Update", edit_offering_path(@offering) %></div>
