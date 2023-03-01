@@ -32,7 +32,7 @@
   <div class="show-data">
     <div class="show-info">
       <div class= "property-infos">
-        <p id="property-type">Property type: Villa</p>
+        <p id="property-type">Property type: <%= @offering.property_type %></p>
         <h2>This is the title of my property</h2>
         <h3><%= @offering.size %> guests • 6 bedrooms • 4 bathrooms • sauna</h3>
         <p id="show-description"><%= @offering.description %> An ideal magical place to gather, the splendid chalet overlooks the city with a magnificent view of mountains near the ski resort.
@@ -50,8 +50,10 @@
           <span class="night"> / night</span>
         </div>
         <div class="rating-night">
-          <i class="fa-solid fa-star"></i> <%= @offering.average_rating %>
-
+          <% @offering.average_rating.to_i.times do %>
+            <i class="fa-solid fa-star"></i>
+          <% end %>
+          <%= @offering.average_rating %>
         </div>
       </div>
          <% if user_signed_in? %>
