@@ -9,16 +9,18 @@
           <% @offerings.each do |offering| %>
             <div class="col-md-3">
               <img class="rounded" src="https://source.unsplash.com/random/?home&<%= rand(1...100) %>">
-              <div class="card-infos">
-                <div class="card-descr">
-                  <h2><%= offering.title %></h2>
-                  <p class= "description"><%= offering.description %></p>
-                  <p class="price"><%= offering.price_per_night %> €</p>
+              <%= link_to offering_path(offering.id) do %>
+                <div class="card-infos">
+                  <div class="card-descr">
+                    <h2><%= offering.title %></h2>
+                    <p class= "description"><%= offering.description %></p>
+                    <p class="price"><%= offering.price_per_night %> €</p>
+                  </div>
+                  <div class="card-rating">
+                    <i class="fa-solid fa-star"></i> <%= offering.average_rating %>
+                  </div>
                 </div>
-                <div class="card-rating">
-                  <i class="fa-solid fa-star"></i> <%= offering.average_rating %>
-                </div>
-              </div>
+              <% end %>
             </div>
           <% end %>
         </div>
