@@ -1,5 +1,9 @@
-<div class="container">
-  <h1>Create a new offering</h1>
+
+
+<div class="container-form-sub">
+  <h1>Create a new rental</h1>
+
+
   <div class="new_form">
     <%= simple_form_for(@offering) do |f| %>
       <%= f.input :title %>
@@ -14,4 +18,15 @@
       <%= f.submit %>
     <% end %>
   </div>
+
+
+  <div class="file-upload">
+    <div class="file-select">
+      <div class="file-select-button" id="fileName">Choose File</div>
+      <div class="file-select-name" id="noFile">Please import here your pictures</div>
+      <input type="file" name="chooseFile" id="chooseFile">
+    </div>
+  </div>
+
+
 </div>
