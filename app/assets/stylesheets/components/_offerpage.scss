@@ -73,12 +73,12 @@
   margin-bottom: 30px;
 }
 
-#reserve-button {
+.reserve-button {
   background-color: #1edd87b7;
-  text-decoration: none;
-  color: white;
+  text-decoration: none !important;
+  color: white !important;
   font-size: 22px;
-  width: 100%;
+  width: 100% !important;
   display: block;
   line-height: 1.5;
   padding: 0.5em 2em;
@@ -89,7 +89,11 @@
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.20);
 }
 
-#reserve-button:hover {
+.reserve-button a {
+  color: white;
+}
+
+.reserve-button:hover {
   box-shadow: 1px 3px 1px 1px #18ae6ab7;
   transition: 0.5s ease;
 }

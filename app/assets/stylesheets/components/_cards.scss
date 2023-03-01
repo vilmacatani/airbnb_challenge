@@ -20,15 +20,34 @@
 }
 
 .card-infos {
-  text-decoration: none !important;
   position: relative;
   bottom: 10px;
   background-color: rgba(233, 233, 233, 0.663);
   border-radius: 0 0 12px 12px;
 }
 
+a {
+  text-decoration: none;
+}
+
+a p{
+  color:rgb(91, 91, 91);
+}
+
+a h2{
+ color:rgb(57, 57, 57);
+}
+
+a .card-rating{
+  color:rgb(57, 57, 57);
+}
+
+.card-descr {
+ width: 80%;
+}
 
 .card-descr h2 {
+  text-decoration: none !important;
   margin-top: 5px;
   margin-bottom: 0px;
   font-size: 16px;
@@ -38,6 +57,7 @@
 
 
 .card-descr p {
+  text-decoration: none !important;
   font-size: 14px;
   opacity: .7;
   margin: 0;
@@ -49,6 +69,7 @@
 
 
 .col-md-3 .card-infos {
+  text-decoration: none !important;
   padding: 16px;
   display: flex;
   justify-content: space-between;
