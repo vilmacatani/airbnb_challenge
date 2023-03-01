@@ -1,0 +1,12 @@
+<div class="container-form-sub body-form">
+  <h1>Create a new booking</h1>
+
+  <div class="new_form">
+    <%= simple_form_for [@offering, @booking] do |f| %>
+      <%= f.input :start_date, as: :date, html5: true %>
+      <%= f.input :end_date, as: :date, html5: true%>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+</div>

@@ -6,6 +6,7 @@
     <p>Host: <%= booking.offering.user.first_name %> <%= booking.offering.user.last_name %></p>
     <p><%= booking.offering.title %> | <%= booking.start_date %> - <%= booking.end_date %></p>
   <% end %>
+
   <h1>My rental requests</h1>
   <% @my_offering_bookings.each do |booking| %>
     <p>Host: <%= booking.offering.user.first_name %> <%= booking.offering.user.last_name %></p>
