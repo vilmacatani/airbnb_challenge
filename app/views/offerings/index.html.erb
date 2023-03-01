@@ -19,7 +19,8 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
             <li class="nav-item-create-booking">
-              <a class="nav-link" href="#">Airbnb your home</a>
+              <%# <a class="nav-link" href= "#">Airbnb your home</a> %>
+              <%= link_to "Airbnb your home", new_offering_path, class: "nav-link" %>
             </li>
             <li class="nav-item-username">
               <a class="nav-link" href="#">User Name</a>
@@ -49,214 +50,21 @@
     <div class="content">
       <div class="cards" style="padding: 5px;">
         <div class="row">
-          <div class="col-md-3">
-            <img class="rounded" src="https://source.unsplash.com/random/?home&1">
-            <div class="card-infos">
-              <div class="card-descr">
-                <h2>Title here</h2>
-                <p class= "description">Short description here!</p>
-                <p class="price">99.99 €</p>
-              </div>
-              <div class="card-rating">
-                <i class="fa-solid fa-star"></i> 4,3
+          <% @offerings.each do |offering| %>
+            <div class="col-md-3">
+              <img class="rounded" src="https://source.unsplash.com/random/?home&<%= rand(1...100) %>">
+              <div class="card-infos">
+                <div class="card-descr">
+                  <h2><%= offering.title %></h2>
+                  <p class= "description"><%= offering.description %></p>
+                  <p class="price"><%= offering.price_per_night %> €</p>
+                </div>
+                <div class="card-rating">
+                  <i class="fa-solid fa-star"></i> <%= offering.average_rating %>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&16">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&2">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&3">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&4">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&5">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&6">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&7">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&8">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&9">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&10">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&11">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&12">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&13">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&14">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
-          <div class="col-md-3">
-              <img class="rounded" src="https://source.unsplash.com/random/?home&15">
-                <div class="card-infos">
-                  <div class="card-descr">
-                    <h2>Title here</h2>
-                    <p class= "description">Short description here!</p>
-                    <p class="price">99.99 €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i> 4,3
-                  </div>
-                </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
