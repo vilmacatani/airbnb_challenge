@@ -33,7 +33,7 @@
     <div class="show-info">
       <div class= "property-infos">
         <p id="property-type">Property type: <%= @offering.property_type %></p>
-        <h2>This is the title of my property</h2>
+        <h2><%= @offering.title %></h2>
         <h3><%= @offering.size %> guests • 6 bedrooms • 4 bathrooms • sauna</h3>
         <p id="show-description"><%= @offering.description %> An ideal magical place to gather, the splendid chalet overlooks the city with a magnificent view of mountains near the ski resort.
           On 3 levels, with an area of 254m², the chalet benefits from 6 bedrooms, 4wc, 3 baths
@@ -44,27 +44,28 @@
     </div>
     <div class="show-reservation">
       <div class= "property-infos">
-      <div class="price-rating">
-        <div class="price-night">
-          <span class="price">€<%=@offering.price_per_night %></span>
-          <span class="night"> / night</span>
-        </div>
-        <div class="rating-night">
-          <% @offering.average_rating.to_i.times do %>
-            <i class="fa-solid fa-star"></i>
-          <% end %>
-          <%= @offering.average_rating %>
-        </div>
-      </div>
-         <% if user_signed_in? %>
-          <% if @offering.user_id == current_user.id %>
-              <div class="reserve-button"><%= link_to "Update", edit_offering_path(@offering) %></div>
+        <div class="price-rating">
+          <div class="price-night">
+            <span class="price">€<%=@offering.price_per_night %></span>
+            <span class="night"> / night</span>
+          </div>
+          <div class="rating-night">
+            <% @offering.average_rating.to_i.times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
+            <%= @offering.average_rating %>
+          </div>
+          </div>
+          <% if user_signed_in? %>
+            <% if @offering.user_id == current_user.id %>
+                <div class="reserve-button"><%= link_to "Update", edit_offering_path(@offering) %></div>
+            <% else %>
+              <a class="reserve-button" href="#reservefuntion">Reserve now</a>
+            <% end %>
           <% else %>
             <a class="reserve-button" href="#reservefuntion">Reserve now</a>
           <% end %>
-        <% else %>
-          <a class="reserve-button" href="#reservefuntion">Reserve now</a>
-        <% end %>
+      </div>
     </div>
   </div>
 </div>

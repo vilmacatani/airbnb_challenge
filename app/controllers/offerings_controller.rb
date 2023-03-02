@@ -5,7 +5,8 @@ class OfferingsController < ApplicationController
     @offerings = Offering.all
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @offering = Offering.new
@@ -41,6 +42,6 @@ class OfferingsController < ApplicationController
 
   def offering_params
     params.require(:offering).permit(:title, :available, :description, :price_per_night,
-          :address, :country, :size, :city)
+          :address, :country, :size, :city, :property_type)
   end
 end
