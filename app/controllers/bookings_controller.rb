@@ -31,6 +31,21 @@ class BookingsController < ApplicationController
 
   def edit; end
 
+  def update_booking_status_of_my_offering
+    @booking = Booking.find(params[:booking])
+    @booking.pending = false
+
+    if params[:status] == "accept"
+      @booking.accepted = true
+      # @booking.offering.available = false
+    else
+      @booking.accepted = false
+    end
+
+    @booking.save
+    redirect_to bookings_path
+  end
+
   private
 
   def booking_params
@@ -40,4 +55,5 @@ class BookingsController < ApplicationController
   def set_offering
     @offering = Offering.find(params[:offering_id])
   end
+
 end
