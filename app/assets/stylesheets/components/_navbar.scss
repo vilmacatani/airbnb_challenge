@@ -23,17 +23,18 @@
 .search-form-control .btn {
   position: absolute;
   color:rgb(91, 91, 91);
-  top: 8px;
+  top: 4px;
   bottom: 8px;
   right: 8px;
+  font-size: 19px;
 }
 
 .search-form-control .form-control {
-  height: 3.5rem;
+  height: 50px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
   width: 700px;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .search-form-control .form-control:focus {
@@ -69,4 +70,12 @@
 .navbar-nav.me-auto {
   display: flex;
   align-items: center
+}
+
+.links-navbar {
+  font-size: 13px;
+  font-weight: normal;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
 }
