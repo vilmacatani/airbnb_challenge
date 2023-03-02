@@ -10,6 +10,19 @@
     <% else %>
       <%= booking.accepted ? "Accepted" : "Declined"%>
     <% end %>
+
+    <%= link_to "review", new_booking_review_path(booking) %>
+    <h3>your revies</h3>
+    <% booking.reviews.each do |review| %>
+      <div>
+        <%= review.comment %>
+        <%= link_to "Delete Review", review_path(review), data: {turbo_method: :delete} %>
+      </div>
+    <% end %>
+
+
+    <p>--------------------------</p>
+
   <% end %>
 
   <h1>My rental requests</h1>

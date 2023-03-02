@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to booking_path(@booking), status: :see_other
+    redirect_to bookings_path, status: :see_other
   end
 
   private
@@ -28,6 +28,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content)
+    params.require(:review).permit(:comment)
   end
 end
