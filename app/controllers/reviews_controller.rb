@@ -9,14 +9,16 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-    redirect_to booking_path(@booking)
+      redirect_to booking_path(@booking)
     else
-    render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
+    end
   end
+
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to booking_path(@review.booking), status: :see_other
+    redirect_to booking_path(@booking), status: :see_other
   end
 
   private
