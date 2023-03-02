@@ -22,11 +22,19 @@ User.create!(first_name: "Marta",
 # Booking.create!(start_date: Date.new(2023, 2, 21), end_date: Date.new(23, 2, 27), accepted: false)
 
 Offering.create!(user_id: User.first.id, title: "Beautiful view appartment in the heart of Amsterdam", available: true,
-  description: "Beautiful 4 bedrooms appartment for a big family, pets allowed, with balcony", property_type: "Appartment",average_rating: 4, price_per_night: 29.99, address:"Hoogvliet 3 2203 MB", city: "Amsterdam", country: "Netherlands", size:8)
+  description: "Beautiful 4 bedrooms appartment for a big family, pets allowed, with balcony. An ideal magical place to gather, the splendid chalet overlooks the city with a magnificent view of mountains near the ski resort.
+  On 3 levels, with an area of 254m², the chalet benefits from 6 bedrooms, 4wc, 3 baths
+  This proprity features a games room, sauna and outdoor spa.
+  This magical place are ideally designed to accommodate 14 people.", property_type: "Appartment",average_rating: 4, price_per_night: 29.99, address:"Hoogvliet 3 2203 MB", city: "Amsterdam", country: "Netherlands", size:8)
 Offering.create!(user_id: User.first.id, title:"Noordwijk, let's have some fun!",available: true,
-  description: "Beautiful 2 bedrooms appartment for a big family,pets not allowed", property_type: "Appartment", average_rating: 5, price_per_night: 300.0, address:"Amstelveenseweg 42 2201", city: "Amsterdam", country: "Netherlands", size:12)
+  description: "Beautiful 2 bedrooms appartment for a big family,pets not allowed. An ideal magical place to gather, the splendid chalet overlooks the city with a magnificent view of mountains near the ski resort.
+  On 3 levels, with an area of 254m², the chalet benefits from 6 bedrooms, 4wc, 3 baths
+  This proprity features a games room, sauna and outdoor spa.
+  This magical place are ideally designed to accommodate 14 people.", property_type: "Appartment", average_rating: 5, price_per_night: 300.0, address:"Amstelveenseweg 42 2201", city: "Amsterdam", country: "Netherlands", size:12)
 Offering.create!(user_id: User.last.id, title:"Paris the city of love!", available: true,
-  description: "Beautiful place with 2 bedrooms,one kitchen, pets allowed with balcony", property_type: "Appartment", average_rating: 5, price_per_night: 149.99, address:"Zeeweg 3 2202", city: "Utrecht", country: "Netherlands", size:4)
+  description: "Beautiful place with 2 bedrooms,one kitchen, pets allowed with balcony. An ideal magical place to gather, the splendid chalet overlooks the city with a magnificent view of mountains near the ski resort.
+  On 3 levels, with an area of 254m², the chalet benefits from 6 bedrooms, 4wc, 3 baths
+  This proprity features a games room, sauna and outdoor spa. This magical place are ideally designed to accommodate 14 people.", property_type: "Appartment", average_rating: 5, price_per_night: 149.99, address:"Zeeweg 3 2202", city: "Utrecht", country: "Netherlands", size:4)
 
 
 Booking.create!(offering_id: Offering.last.id, user_id: User.first.id, start_date: Date.new(2023, 2, 21), end_date: Date.new(2023, 2, 27), accepted: false, pending: true)
