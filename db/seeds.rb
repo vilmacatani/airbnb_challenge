@@ -23,19 +23,19 @@ User.create!(first_name: "Marta",
 
 Offering.create!(user_id: User.first.id, title: "Beautiful view appartment in the heart of Amsterdam", available: true,
   description: "Beautiful 4 bedrooms appartment for a big family, pets allowed, with balcony", average_rating: 4, price_per_night: 29.99, address:"Hoogvliet 3 2203 MB", city: "Amsterdam", country: "Netherlands", size:8)
-Offering.create!(user_id: User.last.id, title:"Beautiful view appartment in the South of Amsterdam",available: true,
+Offering.create!(user_id: User.first.id, title:"Noordwijk, let's have some fun!",available: true,
   description: "Beautiful 2 bedrooms appartment for a big family,pets not allowed", average_rating: 5, price_per_night: 300.0, address:"Amstelveenseweg 42 2201", city: "Amsterdam", country: "Netherlands", size:12)
-Offering.create!(user_id: User.first.id, title:"Beautiful appartment with a sea view in Noordijk ", available: true,
+Offering.create!(user_id: User.last.id, title:"Paris the city of love!", available: true,
   description: "Beautiful place with 2 bedrooms,one kitchen, pets allowed with balcony", average_rating: 5, price_per_night: 149.99, address:"Zeeweg 3 2202", city: "Utrecht", country: "Netherlands", size:4)
 
 
-Booking.create!(offering_id: Offering.first.id, user_id: User.first.id, start_date: Date.new(2023, 2, 21), end_date: Date.new(2023, 2, 27), accepted: false)
+Booking.create!(offering_id: Offering.last.id, user_id: User.first.id, start_date: Date.new(2023, 2, 21), end_date: Date.new(2023, 2, 27), accepted: false)
 Booking.create!(offering_id: Offering.first.id, user_id: User.last.id, start_date: Date.new(2023, 4, 16), end_date: Date.new(2023, 4, 30),accepted: false)
-Booking.create!(offering_id: Offering.first.id, user_id: User.first.id, start_date: Date.new(2023, 6, 10), end_date: Date.new(2023, 6, 25), accepted:false)
+Booking.create!(offering_id: Offering.last.id, user_id: User.first.id, start_date: Date.new(2023, 6, 10), end_date: Date.new(2023, 6, 25), accepted:false)
 
 
 Review.create!(rating: 3, comment: "Nice place to be!", booking_id: Booking.first.id)
-Review.create!(rating: 4, comment:"Exellent", booking_id: Booking.first.id)
-Review.create!(rating:5, comment:"Beautiful", booking_id: Booking.last.id)
+Review.create!(rating: 4, comment: "Exellent", booking_id: Booking.first.id)
+Review.create!(rating:5, comment: "Beautiful", booking_id: Booking.last.id)
 
 # create extra data
