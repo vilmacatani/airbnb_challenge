@@ -40,7 +40,7 @@ class OfferingsController < ApplicationController
   end
 
   def offering_params
-    params.require(:offering).permit(:title, :available, :description, :price_per_night,
+    params.require(:offering).permit(:property_type, :title, :available, :description, :price_per_night,
           :address, :country, :size, :city)
   end
 end
