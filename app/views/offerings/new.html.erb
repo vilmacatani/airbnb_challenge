@@ -9,7 +9,7 @@
       <%= f.input :title %>
       <%= f.input :available, disabled: false %>
       <%= f.input :description %>
-      <%= f.input :property_type %>
+      <%= f.collection_select :property_type, Offering::CATEGORIES, :to_s, :humanize %>
       <%= f.input :price_per_night %>
       <%= f.input :size %>
       <%= f.input :address, as: :string %>
