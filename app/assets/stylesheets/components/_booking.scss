@@ -1,0 +1,89 @@
+.booking-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 130px;
+  position: relative;
+}
+
+.booking-container h2 {
+  position:absolute;
+  bottom: 625px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.bookings-container {
+  background-color: rgba(255, 255, 255, 0.798);
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+  width:60%;
+  height: 600px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  margin-left:126px;
+  margin-right: 126px;
+  margin-bottom: 30px;
+}
+
+.booking-card {
+ border-bottom: 1px solid #ebebeb;
+ margin-top: 20px;
+}
+
+.booking-img {
+  object-fit: cover;
+  height: 90px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  width: 90px;
+  background-position: center;
+  border-radius: 8px !important;
+}
+
+.booking-info{
+  padding:30px;
+  overflow-y: scroll;
+  max-height: 580px;
+}
+
+.booking-title-date {
+  margin-left: 10px;
+}
+
+.booking-card-top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.booking-card-bottom {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  font-size: 11px;
+}
+
+#host {
+  margin: 2px 3px 7px 100px;
+}
+#pending {
+  font-size:13px;
+  background-color: #e9b832b7;
+  color: white;
+  padding:8px;
+  border-radius: 10px;
+  display: table;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.20);
+}
+
+
+.rentals-container {
+  background-color: rgba(255, 255, 255, 0.798);
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+  width:60%;
+  height: 600px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  margin-left:126px;
+  margin-right: 126px;
+  margin-bottom: 30px;
+}

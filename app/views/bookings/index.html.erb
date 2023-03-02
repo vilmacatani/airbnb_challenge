@@ -1,32 +1,52 @@
 <%= render 'components/navbar' %>
-<div class="container">
-  <h1>My bookings</h1>
-  <%# bookings the current user has made %>
-  <% @my_bookings.each do |booking| %>
-    <p>Host: <%= booking.offering.user.first_name %> <%= booking.offering.user.last_name %></p>
-    <p><%= booking.offering.title %> | <%= booking.start_date %> - <%= booking.end_date %></p>
-    <% if booking.pending %>
-      <p>Pending</p>
-    <% else %>
-      <%= booking.accepted ? "Accepted" : "Declined"%>
-    <% end %>
-  <% end %>
-
-  <h1>My rental requests</h1>
-  <% @my_offering_bookings.each do |booking| %>
-    <p>Host: <%= booking.offering.user.first_name %> <%= booking.offering.user.last_name %></p>
-    <p><%= booking.offering.title %> | <%= booking.start_date %> - <%= booking.end_date %></p>
-    <% if booking.pending %>
-      <%= link_to "Accept", update_status_path(status: "accept", booking: booking.id) %>
-      <%= link_to "Decline", update_status_path(status: "decline", booking: booking.id) %>
-    <% else %>
-      <% if booking.accepted %>
-        <p>Accepted</p>
-      <% else %>
-        <p>Declined</p>
+<div class="booking-container">
+  <div class="bookings-container">
+    <h2>My bookings</h1>
+    <%# bookings the current user has made %>
+    <div class="booking-info">
+      <% @my_bookings.each do |booking| %>
+        <div class= "booking-card">
+          <div class="booking-card-top">
+            <img class="booking-img" src="https://source.unsplash.com/random/?home&<%= rand(1...100) %>">
+            <div class="booking-title-date">
+              <p><%= booking.offering.title %></p><p><%= booking.start_date %> - <%= booking.end_date %></p>
+            </div>
+          </div>
+          <div class="booking-card-bottom">
+            <div class="booking-host">
+              <p id="host">Host: <%= booking.offering.user.first_name %> <%= booking.offering.user.last_name %> | </p>
+            </div>
+            <div class="booking-status">
+              <% if booking.pending %>
+                <p id="pending">Pending</p>
+              <% else %>
+                <%= booking.accepted ? "Accepted" : "Declined"%>
+              <% end %>
+            </div>
+          </div>
+        </div>
       <% end %>
-    <% end %>
+    </div>
+  </div>
+  <div class="rentals-container">
+    <div class="rental-info">
+      <h2>My rental requests</h1>
+      <% @my_offering_bookings.each do |booking| %>
+        <p>Host: <%= booking.offering.user.first_name %> <%= booking.offering.user.last_name %></p>
+        <p><%= booking.offering.title %> | <%= booking.start_date %> - <%= booking.end_date %></p>
+        <% if booking.pending %>
+          <%= link_to "Accept", update_status_path(status: "accept", booking: booking.id) %>
+          <%= link_to "Decline", update_status_path(status: "decline", booking: booking.id) %>
+        <% else %>
+          <% if booking.accepted %>
+            <p>Accepted</p>
+          <% else %>
+            <p>Declined</p>
+          <% end %>
+        <% end %>
 
-  <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
 <%= render 'components/footer' %>
