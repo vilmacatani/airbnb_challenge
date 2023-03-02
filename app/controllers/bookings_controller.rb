@@ -35,12 +35,15 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:booking])
     @booking.pending = false
 
-    if params[:status] == "accepted"
+    if params[:status] == "accept"
       @booking.accepted = true
       # @booking.offering.available = false
     else
       @booking.accepted = false
     end
+
+    @booking.save
+    redirect_to bookings_path
   end
 
   private

@@ -5,6 +5,11 @@
   <% @my_bookings.each do |booking| %>
     <p>Host: <%= booking.offering.user.first_name %> <%= booking.offering.user.last_name %></p>
     <p><%= booking.offering.title %> | <%= booking.start_date %> - <%= booking.end_date %></p>
+    <% if booking.pending %>
+      <p>Pending</p>
+    <% else %>
+      <%= booking.accepted ? "Accepted" : "Declined"%>
+    <% end %>
   <% end %>
 
   <h1>My rental requests</h1>
@@ -15,7 +20,11 @@
       <%= link_to "Accept", update_status_path(status: "accept", booking: booking.id) %>
       <%= link_to "Decline", update_status_path(status: "decline", booking: booking.id) %>
     <% else %>
-
+      <% if booking.accepted %>
+        <p>Accepted</p>
+      <% else %>
+        <p>Declined</p>
+      <% end %>
     <% end %>
 
   <% end %>
