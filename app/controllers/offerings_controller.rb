@@ -5,7 +5,11 @@ class OfferingsController < ApplicationController
     @offerings = Offering.all
   end
 
-  def show; end
+  def show
+    @bookings = Booking.where(offering_id: @offering)
+    @reviews = Review.where(booking_id: @bookings)
+    # @offering.average_rating = @reviews.rating.sum / @reviews.length
+  end
 
   def new
     @offering = Offering.new
