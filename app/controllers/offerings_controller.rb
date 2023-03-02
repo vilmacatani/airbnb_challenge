@@ -8,7 +8,15 @@ class OfferingsController < ApplicationController
   def show
     @bookings = Booking.where(offering_id: @offering)
     @reviews = Review.where(booking_id: @bookings)
-    # @offering.average_rating = @reviews.rating.sum / @reviews.length
+    if @reviews.length > 0
+      sum = 0
+      @reviews.each { |review| sum += review.rating.to_i }
+      @offering.average_rating = (sum.to_f / @reviews.length).round(2)
+    else
+      @offering.average_rating = 0
+    end
+    # how to update an already existing offering
+    @offering.update(average_rating: @offering.average_rating)
   end
 
   def new
@@ -45,6 +53,6 @@ class OfferingsController < ApplicationController
 
   def offering_params
     params.require(:offering).permit(:property_type, :title, :available, :description, :price_per_night,
-          :address, :country, :size, :city)
+          :address, :country, :size, :city, :average_rating)
   end
 end

@@ -14,7 +14,7 @@
           </div>
           <div class="booking-card-bottom">
             <div class="booking-host">
-              <p id="host">Host: <%= booking.offering.user.first_name %> <%= booking.offering.user.last_name %> | Review </p>
+              <p id="host">Host: <%= booking.offering.user.first_name %> <%= booking.offering.user.last_name %> | <%= link_to "Review", new_booking_review_path(booking) %> </p>
             </div>
             <div class="booking-status">
               <% if booking.pending %>
