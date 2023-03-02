@@ -23,7 +23,7 @@ class OfferingsController < ApplicationController
 
   def destroy
     @offering.destroy
-    redirect_to offerings_path
+    redirect_to offerings_path, status: :see_other
   end
 
   def edit; end
