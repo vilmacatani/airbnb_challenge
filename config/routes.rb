@@ -10,5 +10,11 @@ Rails.application.routes.draw do
   resources :offerings do
     resources :bookings, only: %i[new create]
   end
+
   resources :bookings, only: %i[index show destroy]
+
+  resources :bookings do
+    resources :reviews, only: [:new, :create]
+  end
+  resources :reviews, only: [:index, :show, :edit, :update, :destroy]
 end
