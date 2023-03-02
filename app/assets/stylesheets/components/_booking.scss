@@ -31,16 +31,17 @@
 }
 
 .booking-img {
+  margin-top: 27px;
   object-fit: cover;
-  height: 90px;
+  height: 110px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
-  width: 90px;
+  width: 110px;
   background-position: center;
   border-radius: 8px !important;
 }
 
 .booking-info{
-  padding:30px;
+  padding: 0 30px 30px 30px ;
   overflow-y: scroll;
   max-height: 580px;
 }
@@ -59,12 +60,13 @@
   display: flex;
   justify-content:space-between;
   align-items: center;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 #host {
   margin: 2px 3px 7px 100px;
 }
+
 #pending {
   font-size:13px;
   background-color: #e9b832b7;
@@ -75,6 +77,40 @@
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.20);
 }
 
+#accepted {
+  font-size:13px;
+  background-color: #1edd87b7;
+  color: white;
+  padding:8px;
+  border-radius: 10px;
+  display: table;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.20);
+}
+
+#declined {
+  font-size:13px;
+  background-color: #e31212b7;
+  color: white;
+  padding:8px;
+  border-radius: 10px;
+  display: table;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.20);
+}
+
+#booking-title {
+  font-weight: bold;
+  font-size:15px;
+}
+
+#booking-date {
+  font-size: 12px;
+  font-weight: 400;
+  border:1px solid salmon;
+  padding:8px;
+  border-radius: 8px;
+  color: rgb(91, 91, 91);
+
+}
 
 .rentals-container {
   background-color: rgba(255, 255, 255, 0.798);
@@ -86,4 +122,8 @@
   margin-left:126px;
   margin-right: 126px;
   margin-bottom: 30px;
+}
+
+.fa-sharp {
+  color: salmon;
 }

@@ -9,18 +9,22 @@
           <div class="booking-card-top">
             <img class="booking-img" src="https://source.unsplash.com/random/?home&<%= rand(1...100) %>">
             <div class="booking-title-date">
-              <p><%= booking.offering.title %></p><p><%= booking.start_date %> - <%= booking.end_date %></p>
+              <p id="booking-title"><%= booking.offering.title %></p><p id="booking-date"><%= booking.start_date.strftime('%d %B, %Y') %> <i class="fa-sharp fa-solid fa-arrow-right"></i> <%= booking.end_date.strftime('%d %B, %Y') %></p>
             </div>
           </div>
           <div class="booking-card-bottom">
             <div class="booking-host">
-              <p id="host">Host: <%= booking.offering.user.first_name %> <%= booking.offering.user.last_name %> | </p>
+              <p id="host">Host: <%= booking.offering.user.first_name %> <%= booking.offering.user.last_name %> | Review </p>
             </div>
             <div class="booking-status">
               <% if booking.pending %>
                 <p id="pending">Pending</p>
               <% else %>
-                <%= booking.accepted ? "Accepted" : "Declined"%>
+                <% if booking.accepted %>
+                  <p id="accepted">Accepted</p>
+                <% else %>
+                  <p id="declined">Declined</p>
+                <% end %>
               <% end %>
             </div>
           </div>
@@ -44,9 +48,21 @@
             <p>Declined</p>
           <% end %>
         <% end %>
-
       <% end %>
     </div>
   </div>
 </div>
 <%= render 'components/footer' %>
+
+
+
+
+    <%# <%= link_to "review", new_booking_review_path(booking) %>
+    <%# <h3>your revies</h3> %>
+    <%# <% booking.reviews.each do |review| %>
+      <%# <div> %>
+        <%# <%= review.comment %>
+        <%# <%= review.rating %>
+        <%# <%= link_to "Delete Review", review_path(review), data: {turbo_method: :delete} %> %>
+      <%# </div> %>
+    <%# <% end %>
