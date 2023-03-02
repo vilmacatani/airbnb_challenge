@@ -13,15 +13,23 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.pending = true
-    @booking.accepted = false
-    @booking.user = current_user
-    @booking.offering = @offering
+    @bookings = Booking.where(offering_id: @offering)
+    # we have to check for availability
+    available = check_availability(@booking, @bookings)
+    if available
+      @booking.pending = true
+      @booking.accepted = false
+      @booking.user = current_user
+      @booking.offering = @offering
 
-    if @booking.save
-      redirect_to bookings_path
+      if @booking.save
+        redirect_to bookings_path
+      else
+        render :new, status: :unprocessable_entity
+      end
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_offering_booking_path(@offering)
+      flash[:alert] = 'This booking is not available for those days'
     end
   end
 
@@ -37,13 +45,25 @@ class BookingsController < ApplicationController
 
     if params[:status] == "accept"
       @booking.accepted = true
-      # @booking.offering.available = false
     else
       @booking.accepted = false
     end
 
     @booking.save
     redirect_to bookings_path
+  end
+
+  def check_availability(new_booking, existing_bookings)
+    new_booking_range = (new_booking.start_date..new_booking.end_date)
+    available = true
+    existing_bookings.each do |existing_booking|
+      existing_booking_range = (existing_booking.start_date..existing_booking.end_date)
+      if (new_booking_range.overlaps? existing_booking_range) && existing_booking.accepted
+        available = false
+        break
+      end
+    end
+    return available
   end
 
   private
@@ -55,5 +75,4 @@ class BookingsController < ApplicationController
   def set_offering
     @offering = Offering.find(params[:offering_id])
   end
-
 end
