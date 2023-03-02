@@ -3,6 +3,12 @@ class OfferingsController < ApplicationController
 
   def index
     @offerings = Offering.all
+    @markers = @offerings.geocoded.map do |offering|
+      {
+        lat: offering.latitude,
+        lng: offering.longitude
+      }
+    end
   end
 
   def show; end
