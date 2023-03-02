@@ -75,7 +75,15 @@
         <p><span><i class="fa-solid fa-star"></i> <%= @offering.average_rating %></span></p>
       </div>
       <% @reviews.each do |review| %>
-        <div class="review-card"><%= review.comment %></div>
+        <div class="review-card">
+          <p class="user-review">
+            <%= review.booking.user.first_name %>
+            <% review.rating.times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
+          </p>
+          <p><%= review.comment %></p>
+        </div>
       <% end %>
     </div>
   </div>
