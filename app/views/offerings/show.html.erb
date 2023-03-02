@@ -70,8 +70,10 @@
   </div>
   <div class="review-info">
     <div class= "property-infos">
-      <h2>Reviews</h2>
-      <h3></h3>
+      <div class="title">
+        <h2>Reviews</h2>
+        <p><span><i class="fa-solid fa-star"></i> <%= @offering.average_rating %></span></p>
+      </div>
       <% @reviews.each do |review| %>
         <div class="review-card"><%= review.comment %></div>
       <% end %>
