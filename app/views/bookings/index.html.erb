@@ -16,6 +16,7 @@
     <% booking.reviews.each do |review| %>
       <div>
         <%= review.comment %>
+        <%= review.rating %>
         <%= link_to "Delete Review", review_path(review), data: {turbo_method: :delete} %>
       </div>
     <% end %>
