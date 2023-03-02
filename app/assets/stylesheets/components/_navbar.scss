@@ -46,7 +46,7 @@
 .nav-item-create-booking {
   margin-right: 30px;
   border: 1px solid #4A4A4A;
-  padding: 4px 8px;
+  padding: 8px 11px;
   border-radius: 50px;
   font-size: 14px;
   font-weight: lighter;
@@ -60,6 +60,7 @@
   opacity: 1;
   border-color:#1EDD88;
   color:#1EDD88;
+  transition: ease 0.3ms;
 }
 
 .nav-item-username {
