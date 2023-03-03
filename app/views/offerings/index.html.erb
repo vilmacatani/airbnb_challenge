@@ -18,7 +18,9 @@
                 <div class="card-infos">
                   <div class="card-descr">
                     <h2><%= offering.title %></h2>
-                    <p class= "description"><%= offering.description %></p>
+                    <% description_array = offering.description.split('.')
+                    %>
+                    <p class= "description"><%= description_array[0] %></p>
                     <p class="price"><%= offering.price_per_night %> €</p>
                   </div>
                   <div class="card-rating">

@@ -30,6 +30,24 @@
 
 }
 
+.review-info{
+  background-color: rgba(255, 255, 255, 0.798);
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+  width:50%;
+  height: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  margin-left:126px;
+  margin-right: 126px;
+  margin-bottom: 30px;
+
+
+  .title {
+    border-bottom: solid rgb(218, 218, 218);
+    color: rgb(119, 119, 119);
+  }
+}
+
 #property-type {
   background-color: #1edd87b7;
   color: white;
@@ -71,6 +89,29 @@
   margin-right: 166px;
   text-align: center;
   margin-bottom: 30px;
+}
+.delete-button {
+  background-color: #dd281eb7;
+  text-decoration: none !important;
+  color: white !important;
+  font-size: 18px;
+  width: 100% !important;
+  display: block;
+  line-height: 1.5;
+  padding: 0.5em 2em;
+  border:none;
+  margin-top: 5px;
+  box-shadow: 0 2px 0 0 #b01e17b7;
+  border-radius: 10px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.20);
+}
+.delete-button a {
+  color: white;
+}
+
+.delete-button:hover {
+  box-shadow: 1px 3px 1px 1px #b01e17b7;
+  transition: 0.5s ease;
 }
 
 .reserve-button {

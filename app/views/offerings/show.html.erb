@@ -33,38 +33,58 @@
     <div class="show-info">
       <div class= "property-infos">
         <p id="property-type">Property type: <%= @offering.property_type %></p>
-        <h2>This is the title of my property</h2>
+        <h2><%= @offering.title %></h2>
         <h3><%= @offering.size %> guests • 6 bedrooms • 4 bathrooms • sauna</h3>
-        <p id="show-description"><%= @offering.description %> An ideal magical place to gather, the splendid chalet overlooks the city with a magnificent view of mountains near the ski resort.
-          On 3 levels, with an area of 254m², the chalet benefits from 6 bedrooms, 4wc, 3 baths
-          This proprity features a games room, sauna and outdoor spa.
-          This magical place are ideally designed to accommodate 14 people.
+        <p id="show-description"><%= @offering.description %>
         </p>
       </div>
     </div>
     <div class="show-reservation">
       <div class= "property-infos">
-      <div class="price-rating">
-        <div class="price-night">
-          <span class="price">€<%=@offering.price_per_night %></span>
-          <span class="night"> / night</span>
+        <div class="price-rating">
+          <div class="price-night">
+            <span class="price">€<%=@offering.price_per_night %></span>
+            <span class="night"> / night</span>
+          </div>
+          <div class="rating-night">
+            <% @offering.average_rating.to_i.times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
+            <%= @offering.average_rating %>
+          </div>
         </div>
-        <div class="rating-night">
-          <% @offering.average_rating.to_i.times do %>
-            <i class="fa-solid fa-star"></i>
+        <div>
+          <% if user_signed_in? %>
+            <% if @offering.user_id == current_user.id %>
+              <div class="reserve-button"><%= link_to "Update", edit_offering_path(@offering) %></div>
+              <div class="delete-button"><%= link_to "Delete", offering_path(@offering), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></div>
+            <% else %>
+              <div class="reserve-button"><%= link_to "New booking", new_offering_booking_path(@offering) %></div>
+            <% end %>
+          <% else %>
+            <%= link_to "New booking", new_user_session_path, class: "reserve-button" %>
           <% end %>
-          <%= @offering.average_rating %>
         </div>
       </div>
-         <% if user_signed_in? %>
-          <% if @offering.user_id == current_user.id %>
-            <div class="reserve-button"><%= link_to "Update", edit_offering_path(@offering) %></div>
-          <% else %>
-            <div class="reserve-button"><%= link_to "New booking", new_offering_booking_path(@offering) %></div>
-          <% end %>
-        <% else %>
-          <%= link_to "New booking", new_user_session_path, class: "reserve-button" %>
-        <% end %>
+    </div>
+  </div>
+  <div class="review-info">
+    <div class= "property-infos">
+      <div class="title">
+        <h2>Reviews</h2>
+        <p><span><i class="fa-solid fa-star"></i> <%= @offering.average_rating %></span></p>
+      </div>
+      <% @reviews.each do |review| %>
+        <div class="review-card">
+          <p class="user-review">
+            <%= review.booking.user.first_name %>
+            <% review.rating.times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
+          </p>
+          <p><%= review.comment %></p>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
