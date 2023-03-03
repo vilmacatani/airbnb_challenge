@@ -17,7 +17,10 @@
       <div>
         <%= review.comment %>
         <%= review.rating %>
-        <%= link_to "Delete Review", review_path(review), data: {turbo_method: :delete} %>
+        <%= link_to "Delete", review_path(review), data: {turbo_method: :delete} %>
+          <% review.rating.to_i.times do %>
+            <%= render "shared/star" %>
+          <% end %></p>
       </div>
     <% end %>
 
