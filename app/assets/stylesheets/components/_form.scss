@@ -12,6 +12,27 @@
   background-color: #f5f5f5ef;
 }
 
+.my-input {
+background-color:white;
+  margin:10px auto;
+}
+
+.my-rating {
+ color: orange;
+ margin:10px auto;
+}
+
+.my-button {
+  background-color:#0fb668b7;
+  color: white;
+  height:40px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  box-shadow:0 2px 4px rgba(0, 0, 0, 0.18);
+
+}
+
 .new_form input[type=submit] {
   background:#34495e;
   color:#FFFFFF;
