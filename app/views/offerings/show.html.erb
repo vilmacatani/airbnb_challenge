@@ -68,23 +68,37 @@
       </div>
     </div>
   </div>
-  <div class="review-info">
-    <div class= "property-infos">
-      <div class="title">
-        <h2>Reviews</h2>
-        <p><span><i class="fa-solid fa-star"></i> <%= @offering.average_rating %></span></p>
-      </div>
-      <% @reviews.each do |review| %>
-        <div class="review-card">
-          <p class="user-review">
-            <%= review.booking.user.first_name %>
-            <% review.rating.times do %>
-              <i class="fa-solid fa-star"></i>
-            <% end %>
-          </p>
-          <p><%= review.comment %></p>
+  <div class="review-container">
+    <div class="review-info w-100">
+      <div class= "property-reviews">
+        <div class="review-rating">
+          <div class="title">
+            <h2>Reviews</h2>
+          </div>
+          <div class="review-average-rating">
+            <p><span><i class="fa-solid fa-star"></i> <%= @offering.average_rating %></span></p>
+          </div>
         </div>
-      <% end %>
+        <div class="reviews-scroll">
+          <% @reviews.each do |review| %>
+            <div class="review-card">
+              <div class= "user-review-content">
+                <p class="user-review"><span>
+                  <img class="review-img" src="https://source.unsplash.com/random/?face&<%= rand(1...100) %>">
+                  <%= review.booking.user.first_name %>
+                  <% review.rating.times do %>
+                    <i class="fa-solid fa-star"></i>
+                  <% end %>
+                </span></p>
+                <div class="comment-created">
+                  <p><%= review.comment %></p>
+                  <p><%= review.created_at.strftime('%B, %Y')%></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
