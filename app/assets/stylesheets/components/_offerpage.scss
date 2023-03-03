@@ -80,6 +80,10 @@
   padding:15px;
 }
 
+.review-container {
+  margin-bottom: 20px;
+}
+
 #property-type {
   background-color: #1edd87b7;
   color: white;
@@ -121,6 +125,7 @@
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 15px;
   width:30%;
+  margin-right: 25px;
   height: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
   text-align: center;
