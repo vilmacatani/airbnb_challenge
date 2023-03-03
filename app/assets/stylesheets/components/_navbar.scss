@@ -23,17 +23,18 @@
 .search-form-control .btn {
   position: absolute;
   color:rgb(91, 91, 91);
-  top: 8px;
+  top: 4px;
   bottom: 8px;
   right: 8px;
+  font-size: 19px;
 }
 
 .search-form-control .form-control {
-  height: 3.5rem;
+  height: 50px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
   width: 700px;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .search-form-control .form-control:focus {
@@ -45,7 +46,7 @@
 .nav-item-create-booking {
   margin-right: 30px;
   border: 1px solid #4A4A4A;
-  padding: 4px 8px;
+  padding: 8px 11px;
   border-radius: 50px;
   font-size: 14px;
   font-weight: lighter;
@@ -59,6 +60,7 @@
   opacity: 1;
   border-color:#1EDD88;
   color:#1EDD88;
+  transition: ease 0.3ms;
 }
 
 .nav-item-username {
@@ -69,4 +71,12 @@
 .navbar-nav.me-auto {
   display: flex;
   align-items: center
+}
+
+.links-navbar {
+  font-size: 13px;
+  font-weight: normal;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
 }
