@@ -45,7 +45,7 @@ class OfferingsController < ApplicationController
       @reviews.each { |review| sum += review.rating.to_i }
       @offering.average_rating = (sum.to_f / @reviews.length).round(1)
     else
-      @offering.average_rating = 0
+      @offering.average_rating = @offering.average_rating
     end
     # how to update an already existing offering
     @offering.update(average_rating: @offering.average_rating)
