@@ -2,6 +2,8 @@
   margin-top:10px;
   margin-bottom: 10px;
   overflow: hidden;
+  width: 325px;
+  height: 420px;
 }
 
 
@@ -24,6 +26,12 @@
   bottom: 10px;
   background-color: rgba(233, 233, 233, 0.663);
   border-radius: 0 0 12px 12px;
+  height: 159px;
+}
+
+.cards p.description{
+  overflow-y: scroll;
+  max-height: 75px;
 }
 
 a {
