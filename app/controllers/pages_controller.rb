@@ -12,8 +12,10 @@ class PagesController < ApplicationController
       {
         lat: offering.latitude,
         lng: offering.longitude,
-        # info_window: render_to_string(partial: "popup", locals: { offering: offering })
+        info_window_html: render_to_string(partial: "popup", locals: { offering: offering }),
+        marker_html: render_to_string(partial: "marker")
       }
+
     end
   end
 end

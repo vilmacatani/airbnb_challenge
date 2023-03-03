@@ -30,8 +30,6 @@ export default class extends Controller {
       // customMarker.style.backgroundImage = `${ABNB.png}`
       // customMarker.style.backgroundSize = "contain"
 
-
-
       new mapboxgl.Marker({element: customMarker})
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
