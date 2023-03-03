@@ -1,0 +1,44 @@
+.map-marker:hover {
+ transform: rotate(-180deg);
+ transition-duration: 1s;
+}
+
+#map {
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#map-show {
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.mapboxgl-popup {
+  border-radius: 15px;
+}
+
+.mapboxgl-popup-content {
+  align-content: center;
+  justify-content: center;
+
+  p {
+    text-align: center;
+    font-family: "Work Sans", "Helvetica", "sans-serif";
+    font-size: 12px;
+    color:rgb(119, 119, 119);
+    padding: 0%;
+  }
+
+  h1 {
+    text-align: center;
+    font-family: "Arial", "Helvetica", "sans-serif";
+    font-size: 14px;
+    color:salmon;
+  }
+}
+
+.mapboxgl-ctrl-logo {
+  visibility: hidden;
+}
