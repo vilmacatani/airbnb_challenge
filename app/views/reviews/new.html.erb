@@ -1,6 +1,11 @@
-<h1>New review</h1>
-<%= simple_form_for [@booking, @review] do |f| %>
-  <%= f.input :comment %>
-  <%= f.input :rating, collection: [1,2,3,4,5] %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<div class="container justify-center w-50 my-4 input-html:{ container:"form-sub" } >
+
+    <h1>New review</h1>
+    <%= simple_form_for [@booking, @review] do |f| %>
+
+    <%= f.input :comment, input_html: { class: "my-input" } %>
+    <%= f.input :rating, input_html: {class: "my-rating" }, collection: [1,2,3,4,5] %>
+    <%= f.submit "Submit review", class:"my-button"%>
+
+    <% end %>
+</div>
