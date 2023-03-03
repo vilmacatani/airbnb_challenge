@@ -21,26 +21,6 @@ User.create!(first_name: "Marta",
   email:"martamartasolenne@gmail.com",
   password:"212121")
 
-# 15.times do
-#   first = Faker::Name.first_name
-#   last = Faker::Name.last_name
-#   User.create!(first_name: first,
-#     last_name: last,
-#     email:"#{first}#{last}@gmail.com",
-#     password:"111111")
-# end
-
-# Booking.create!(start_date: Date.new(2023, 2, 21), end_date: Date.new(23, 2, 27), accepted: false)
-
-# Create offerings
-
-# cities = {"Amsterdam" => ["Weesperzijde 124, 1091 ER", "Single 1", "Keisergracht 2", "Prinsengracht 10"],
-#     "Finland" => ["Puistokatu 7b A 14 "],
-#     "Portugal",
-#     "Aosta",
-#     "Antwerp"=>[]}
-
-
 average_rating = rand(1.0 .. 5.0).round(1)
 property_type = CATEGORIES.sample
 price = rand(35.0..1500.0).round(1)
@@ -57,14 +37,14 @@ description: "Beautiful 4 bedrooms appartment for a big family,
 pets allowed, with balcony. An ideal magical place to gather, the splendid chalet overlooks the city with a magnificent view of mountains near the ski resort.
 On 3 levels, with an area of 254m², the chalet benefits from 6 bedrooms, 4wc, 3 baths
 This proprity features a games room, sauna and outdoor spa.
-This magical place are ideally designed to accommodate 14 people.", property_type: "Appartment",average_rating: average_rating, price_per_night: 29.99, address:"Weesperzijde 1, 1091 ER", city: "Amsterdam", country: "Netherlands", size:8)
+This magical place are ideally designed to accommodate 14 people.", property_type: "Appartment",average_rating: 3.4, price_per_night: 29.99, address:"Weesperzijde 1, 1091 ER", city: "Amsterdam", country: "Netherlands", size:8)
 
 Offering.create!(user_id: User.all.sample.id, title: "Coolest place ever in Amsterdam ", available: true,
 description: "Beautiful 4 bedrooms appartment for a big family,
 pets allowed, with balcony. An ideal magical place to gather, the splendid chalet overlooks the city with a magnificent view of mountains near the ski resort.
 On 3 levels, with an area of 254m², the chalet benefits from 6 bedrooms, 4wc, 3 baths
 This proprity features a games room, sauna and outdoor spa.
-This magical place are ideally designed to accommodate 14 people.", property_type: property_type,average_rating: average_rating, price_per_night: 29.99, address:"Bloemgracht 117, 1016 KJ", city: "Amsterdam", country: "Netherlands", size:8)
+This magical place are ideally designed to accommodate 14 people.", property_type: property_type,average_rating: 4.5, price_per_night: 29.99, address:"Bloemgracht 117, 1016 KJ", city: "Amsterdam", country: "Netherlands", size:8)
 
 
 Offering.create!(user_id: User.all.sample.id, title:"Noordwijk, let's have some fun!",available: true,
@@ -83,7 +63,7 @@ Offering.create!(user_id: User.all.sample.id, title:"Most beautiful view in Pari
   On 3 levels, with an area of 254m², the chalet benefits from 6 bedrooms, 4wc, 3 baths
   This proprity features a games room, sauna and outdoor spa. This magical place are ideally designed to accommodate 14 people.", property_type: "Appartment", average_rating: 4.3, price_per_night: 149.99, address:"Tour Eiffel", city: "Paris", country: "France", size:4)
 
-10.times do
+5.times do
   average_rating = rand(1.0 .. 5.0).round(1)
   property_type = CATEGORIES.sample
   price = rand(35.0..1500.0).round(1)
@@ -101,7 +81,14 @@ end
 10.times do
   month = rand(1..3)
   day = rand(1..19)
-  Booking.create!(offering_id: Offering.all.sample.id, user_id: User.all.sample.id, start_date: Date.new(2023, month, day), end_date: Date.new(2023, month, day+3), accepted: false, pending: true)
+  offering = Offering.all.sample
+  user = User.ids.sample
+  if offering.user_id == user
+    users = User.ids.excluding(user)
+    user = users.sample
+  end
+  Booking.create!(offering_id: offering.id, user_id: user, start_date: Date.new(2023, month, day), end_date: Date.new(2023, month, day+3), accepted: false, pending: true)
+
 end
 
 Booking.create!(offering_id: Offering.first.id, user_id: User.last.id, start_date: Date.new(2023, 4, 15), end_date: Date.new(2023, 4, 30),accepted: false, pending: true)
