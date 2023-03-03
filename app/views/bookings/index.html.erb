@@ -50,10 +50,14 @@
               <% if booking.pending %>
                 <div class="rental-buttons">
                   <div class="button-accept">
-                    <%= link_to "Accept", update_status_path(status: "accept", booking: booking.id), class: 'accept'%>
+                    <%= link_to update_status_path(status: "accept", booking: booking.id), class: 'accept' do %>
+                      <span><i class="fa-solid fa-check"></i> Accept</span>
+                    <% end %>
                   </div>
                   <div class="button-decline">
-                    <%= link_to "Decline", update_status_path(status: "decline", booking: booking.id), class: 'decline' %>
+                    <%= link_to update_status_path(status: "decline", booking: booking.id), class: 'decline' do %>
+                      <span><i class="fa-solid fa-x"></i> Decline</span>
+                    <% end %>
                   </div>
                 </div>
               <% else %>
@@ -71,16 +75,3 @@
   </div>
 </div>
 <%= render 'components/footer' %>
-
-
-
-
-    <%# <%= link_to "review", new_booking_review_path(booking) %>
-    <%# <h3>your revies</h3> %>
-    <%# <% booking.reviews.each do |review| %>
-      <%# <div> %>
-        <%# <%= review.comment %>
-        <%# <%= review.rating %>
-        <%# <%= link_to "Delete Review", review_path(review), data: {turbo_method: :delete} %> %>
-      <%# </div> %>
-    <%# <% end %>
