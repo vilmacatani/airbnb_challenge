@@ -7,10 +7,9 @@ class OfferingsController < ApplicationController
       {
         lat: offering.latitude,
         lng: offering.longitude,
-        # info_window: render_to_string(partial: "popup", locals: { offering: offering }),
-        # marker_html: render_to_string(partial: "marker")
+        info_window_html: render_to_string(partial: "popup", locals: { offering: offering }),
+        marker_html: render_to_string(partial: "marker")
       }
-      raise
     end
   end
 

@@ -15,7 +15,6 @@ class PagesController < ApplicationController
         info_window_html: render_to_string(partial: "popup", locals: { offering: offering }),
         marker_html: render_to_string(partial: "marker")
       }
-
     end
   end
 end

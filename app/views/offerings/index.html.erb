@@ -2,6 +2,11 @@
 <%= render 'components/navbar' %>
 
 <div class="container">
+  <div id='map' style='width: 100%; height: 400px;'
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAP_API_KEY'] %>">
+  </div>
 
     <div class="content">
       <div class="cards" style="padding: 5px;">
@@ -28,6 +33,8 @@
     </div>
     </div>
   </div>
+
 </div>
+
 
 <%= render 'components/footer' %>
