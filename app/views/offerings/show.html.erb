@@ -2,6 +2,12 @@
 
 <div class="show-container">
 
+  <div id='map' style=''
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAP_API_KEY'] %>">
+  </div>
+
   <div class="container overflow-hidden">
 
     <div class="row" style="height: 440px">
@@ -25,7 +31,11 @@
       </div>
 
       <div class="p-3 col-4 h-100">
-        <div class="red" style="background-image: url('https://source.unsplash.com/random/?home&6')"></div>
+        <div id='map-show' style='height: 100%'
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAP_API_KEY'] %>">
+        </div>
       </div>
     </div>
   </div>

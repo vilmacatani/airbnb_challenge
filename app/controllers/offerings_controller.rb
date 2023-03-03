@@ -26,10 +26,18 @@ class OfferingsController < ApplicationController
         info_window_html: render_to_string(partial: "popup", locals: { offering: offering }),
         marker_html: render_to_string(partial: "marker")
       }
+
     end
   end
 
   def show
+    @markers = [{
+      lat: @offering.geocode[0],
+      lng: @offering.geocode[1],
+      info_window_html: render_to_string(partial: "popup", locals: { offering: @offering }),
+      marker_html: render_to_string(partial: "marker")
+      }]
+
     @bookings = Booking.where(offering_id: @offering)
     @reviews = Review.where(booking_id: @bookings)
     if @reviews.length > 0
