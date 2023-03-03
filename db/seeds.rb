@@ -101,7 +101,4 @@ comments = ["Nice place to be!", "My god the host is so cool", "Excellent place 
   Review.create!(rating: rand(1..5), comment: comments.sample, booking_id: Booking.all.sample.id)
 end
 
-Review.create!(rating: 4, comment: "Exellent", booking_id: Booking.first.id)
-Review.create!(rating: 5, comment: "Beautiful", booking_id: Booking.last.id)
-
 # create extra data
