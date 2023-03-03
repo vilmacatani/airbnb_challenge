@@ -11,7 +11,7 @@ class OfferingsController < ApplicationController
     if @reviews.length > 0
       sum = 0
       @reviews.each { |review| sum += review.rating.to_i }
-      @offering.average_rating = (sum.to_f / @reviews.length).round(2)
+      @offering.average_rating = (sum.to_f / @reviews.length).round(1)
     else
       @offering.average_rating = 0
     end
